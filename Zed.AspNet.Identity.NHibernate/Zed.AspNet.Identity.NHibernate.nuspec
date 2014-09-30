@@ -6,13 +6,13 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <licenseUrl>https://raw.githubusercontent.com/ztepsic/zed.nhibernate.aspnet.identity/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/ztepsic/zed.nhibernate.aspnet.identity</projectUrl>
-    <iconUrl>https://github.com/ztepsic/zed.nhibernate.aspnet.identity</iconUrl>
+    <licenseUrl>https://raw.githubusercontent.com/ztepsic/zed.aspnet.identity.nhibernate/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/ztepsic/zed.aspnet.identity.nhibernate</projectUrl>
+    <iconUrl>https://github.com/ztepsic/zed.aspnet.identity.nhibernate</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>$description$</releaseNotes>
     <copyright>Copyright 2014</copyright>
-    <tags>Zed Asp.Net Identity</tags>
+    <tags>Zed Asp.Net Identity NHibernate</tags>
   </metadata>
 </package>

@@ -1,1 +1,1 @@
-nuget pack Zed.NHibernate/Zed.NHibernate.csproj -IncludeReferencedProjects -Prop Configuration=Release -Symbols
+nuget pack Zed.AspNet.Identity.NHibernate/Zed.AspNet.Identity.NHibernate.csproj -IncludeReferencedProjects -Prop Configuration=Release -Symbols
