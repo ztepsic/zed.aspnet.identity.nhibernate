@@ -1,39 +1,64 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
-using Zed.AspNet.Identity.NHibernate;
 using Zed.Domain;
 
-namespace Zed.NHibernate.AspNet.Identity {
+namespace Zed.AspNet.Identity.NHibernate {
     /// <summary>
     /// Represents a role entity.
     /// </summary>
     /// <typeparam name="TKey">The type of the key.</typeparam>
-    /// <typeparam name="TUserRole">The type of the user role.</typeparam>
-    public class IdentityRole<TKey, TUserRole> : Entity<TKey>, IRole<TKey> 
-        where TUserRole : IdentityUserRole<TKey> {
+    public class IdentityRole<TKey> : Entity<TKey>, IRole<TKey> {
 
         #region Fields and Properties
 
         /// <summary>
         /// Gets or sets the role name.
         /// </summary>
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Gets the collection of users in the role.
-        /// </summary>
-        public virtual ICollection<TUserRole> Users { get; private set; }
+        public virtual string Name { get; set; }
 
         #endregion
 
         #region Constructors and Init
+
+        /// <summary>
+        /// Protected constructor for NHibernate support for lazy loading.
+        /// </summary>
+        protected IdentityRole() { }
+
+        /// <summary>
+        /// Creates identity role instance
+        /// </summary>
+        /// <param name="roleName">Role name</param>
+        public IdentityRole(string roleName) {
+            if (string.IsNullOrEmpty(roleName)) { throw new ArgumentNullException("roleName"); }
+
+            Name = roleName;
+        }
+
         #endregion
 
-        #region Methods
-        #endregion
     }
+
+    /// <summary>
+    /// Represents a role entity where the identifier is the integer number.
+    /// </summary>
+    public class IdentityRole : IdentityRole<int> {
+
+        #region Constructors and Init
+
+        /// <summary>
+        /// Protected constructor for NHibernate support for lazy loading.
+        /// </summary>
+        protected IdentityRole() { }
+
+        /// <summary>
+        /// Creates identity role instance
+        /// </summary>
+        /// <param name="roleName">Role name</param>
+        public IdentityRole(string roleName) : base(roleName) { }
+
+        #endregion
+
+    }
+
 }
